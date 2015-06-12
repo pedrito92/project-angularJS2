@@ -7,8 +7,8 @@ Based on the angular boilerplate [angular2-seed](https://github.com/mgechev/angu
 # How to start
 
 ```bash
-git clone https://github.com/bcalou/angular2-base.git
-cd angular2-base
+git clone https://github.com/pedrito92/project-angularJS2.git
+cd project-angularJS2
 npm install
 npm install -g gulp # If you don't have gulp already installed
 gulp serve
