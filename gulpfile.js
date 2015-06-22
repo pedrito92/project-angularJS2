@@ -145,7 +145,7 @@ gulp.task('build.js.dev', function () {
 });
 
 gulp.task('build.assets.dev', ['build.js.dev'], function () {
-  return gulp.src(['./app/**/*.html', './app/**/*.css'])
+  return gulp.src(['./app/**/*.html', './app/**/*.css', './app/**/*.json'])
     .pipe(gulp.dest(PATH.dest.dev.all));
 });
 

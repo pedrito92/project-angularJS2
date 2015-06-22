@@ -1,0 +1,656 @@
+{
+  "data": [
+    {
+      "id": "1109731",
+      "readable": true,
+      "title": "Lose Yourself (Soundtrack Version)",
+      "link": "http://www.deezer.com/track/1109731",
+      "duration": "326",
+      "rank": "990794",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-1.deezer.com/stream/17cb0814dd83646cd91d7fe53392f333-9.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "119606",
+        "title": "Curtain Call",
+        "cover": "https://api.deezer.com/album/119606/image",
+        "tracklist": "https://api.deezer.com/album/119606/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "72059773",
+      "readable": true,
+      "title": "The Monster",
+      "link": "http://www.deezer.com/track/72059773",
+      "duration": "251",
+      "rank": "990240",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-8.deezer.com/stream/8208a068392026316d0373d95cbd8286-4.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "7079247",
+        "title": "The Monster",
+        "cover": "https://api.deezer.com/album/7079247/image",
+        "tracklist": "https://api.deezer.com/album/7079247/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "916445",
+      "readable": true,
+      "title": "'Till I Collapse",
+      "link": "http://www.deezer.com/track/916445",
+      "duration": "298",
+      "rank": "986640",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-9.deezer.com/stream/9ea32324feb87cb79a1b4b9c2f4c7c95-6.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "103248",
+        "title": "The Eminem Show",
+        "cover": "https://api.deezer.com/album/103248/image",
+        "tracklist": "https://api.deezer.com/album/103248/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "101467358",
+      "readable": true,
+      "title": "Phenomenal",
+      "link": "http://www.deezer.com/track/101467358",
+      "duration": "283",
+      "rank": "941532",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-f.deezer.com/stream/fb9cf70e7b2b3aa72053fe519b257c65-0.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "10534992",
+        "title": "Phenomenal",
+        "cover": "https://api.deezer.com/album/10534992/image",
+        "tracklist": "https://api.deezer.com/album/10534992/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "6461440",
+      "readable": true,
+      "title": "Love The Way You Lie (Album Version Explicit)",
+      "link": "http://www.deezer.com/track/6461440",
+      "duration": "263",
+      "rank": "979343",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-c.deezer.com/stream/c492d5c0369cdf18857b8395bbb2ad57-12.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "595243",
+        "title": "Recovery",
+        "cover": "https://api.deezer.com/album/595243/image",
+        "tracklist": "https://api.deezer.com/album/595243/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "90214465",
+      "readable": true,
+      "title": "Guts Over Fear",
+      "link": "http://www.deezer.com/track/90214465",
+      "duration": "301",
+      "rank": "974750",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-0.deezer.com/stream/0dfe2ee427bfff2ec3064d687cfd7192-2.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "9142675",
+        "title": "SHADYXV",
+        "cover": "https://api.deezer.com/album/9142675/image",
+        "tracklist": "https://api.deezer.com/album/9142675/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "916424",
+      "readable": true,
+      "title": "Without Me",
+      "link": "http://www.deezer.com/track/916424",
+      "duration": "290",
+      "rank": "975025",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-5.deezer.com/stream/5e7c927a8c3c8773105f0f2a7461db9e-5.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "103248",
+        "title": "The Eminem Show",
+        "cover": "https://api.deezer.com/album/103248/image",
+        "tracklist": "https://api.deezer.com/album/103248/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "1109730",
+      "readable": true,
+      "title": "Stan (Album Version Explicit)",
+      "link": "http://www.deezer.com/track/1109730",
+      "duration": "404",
+      "rank": "970580",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-f.deezer.com/stream/f43b14377d1dd67e32614212eedf7007-9.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "119606",
+        "title": "Curtain Call",
+        "cover": "https://api.deezer.com/album/119606/image",
+        "tracklist": "https://api.deezer.com/album/119606/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "1109737",
+      "readable": true,
+      "title": "The Real Slim Shady (Album Version Explicit)",
+      "link": "http://www.deezer.com/track/1109737",
+      "duration": "285",
+      "rank": "968148",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-0.deezer.com/stream/0450ea0563a138ec1c85b392714cc240-9.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "119606",
+        "title": "Curtain Call",
+        "cover": "https://api.deezer.com/album/119606/image",
+        "tracklist": "https://api.deezer.com/album/119606/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "72160310",
+      "readable": true,
+      "title": "Survival",
+      "link": "http://www.deezer.com/track/72160310",
+      "duration": "272",
+      "rank": "972813",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-8.deezer.com/stream/897e5e5cef067e1fd6c41c506c07e811-3.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "7090505",
+        "title": "The Marshall Mathers LP2",
+        "cover": "https://api.deezer.com/album/7090505/image",
+        "tracklist": "https://api.deezer.com/album/7090505/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "6026499",
+      "readable": true,
+      "title": "Not Afraid (Album Version Explicit)",
+      "link": "http://www.deezer.com/track/6026499",
+      "duration": "251",
+      "rank": "972427",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-f.deezer.com/stream/f4cadf18ccce1a0ef1fbe0bef963456a-4.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "550194",
+        "title": "Not Afraid",
+        "cover": "https://api.deezer.com/album/550194/image",
+        "tracklist": "https://api.deezer.com/album/550194/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "72160314",
+      "readable": true,
+      "title": "Rap God",
+      "link": "http://www.deezer.com/track/72160314",
+      "duration": "364",
+      "rank": "976338",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-b.deezer.com/stream/b5050e0f1ce97f11dce114e7f06b0f56-3.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "7090505",
+        "title": "The Marshall Mathers LP2",
+        "cover": "https://api.deezer.com/album/7090505/image",
+        "tracklist": "https://api.deezer.com/album/7090505/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "4302194",
+      "readable": true,
+      "title": "Forever (Explicit Version)",
+      "link": "http://www.deezer.com/track/4302194",
+      "duration": "358",
+      "rank": "971986",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-5.deezer.com/stream/5844bfb75a2e8b36673b7b19e355f382-4.mp3",
+      "artist": {
+        "id": "246791",
+        "name": "Drake",
+        "link": "http://www.deezer.com/artist/246791",
+        "picture": "https://api.deezer.com/artist/246791/image",
+        "tracklist": "https://api.deezer.com/artist/246791/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "400170",
+        "title": "Forever",
+        "cover": "https://api.deezer.com/album/400170/image",
+        "tracklist": "https://api.deezer.com/album/400170/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "70205643",
+      "readable": true,
+      "title": "Berzerk",
+      "link": "http://www.deezer.com/track/70205643",
+      "duration": "239",
+      "rank": "953876",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-5.deezer.com/stream/5ef4916df131fded59e2055127843171-8.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "6886481",
+        "title": "Berzerk",
+        "cover": "https://api.deezer.com/album/6886481/image",
+        "tracklist": "https://api.deezer.com/album/6886481/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "71397363",
+      "readable": true,
+      "title": "Survival",
+      "link": "http://www.deezer.com/track/71397363",
+      "duration": "272",
+      "rank": "931101",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-7.deezer.com/stream/723a4614ec4e274a554e4ef546e752cd-4.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "7011286",
+        "title": "Survival",
+        "cover": "https://api.deezer.com/album/7011286/image",
+        "tracklist": "https://api.deezer.com/album/7011286/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "6461432",
+      "readable": true,
+      "title": "Not Afraid (Album Version Explicit)",
+      "link": "http://www.deezer.com/track/6461432",
+      "duration": "248",
+      "rank": "939480",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-4.deezer.com/stream/4b338d74e21cb84e16756e4f85013970-12.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "595243",
+        "title": "Recovery",
+        "cover": "https://api.deezer.com/album/595243/image",
+        "tracklist": "https://api.deezer.com/album/595243/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "5979899",
+      "readable": true,
+      "title": "Airplanes, Part II (feat Eminem & Hayley Williams of Paramore)",
+      "link": "http://www.deezer.com/track/5979899",
+      "duration": "319",
+      "rank": "939367",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-b.deezer.com/stream/b6b3c78a6ffe7cf31a69a376e7d3c591-4.mp3",
+      "artist": {
+        "id": "280294",
+        "name": "B.o.B",
+        "link": "http://www.deezer.com/artist/280294",
+        "picture": "https://api.deezer.com/artist/280294/image",
+        "tracklist": "https://api.deezer.com/artist/280294/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "544370",
+        "title": "B.o.B Presents: The Adventures of Bobby Ray",
+        "cover": "https://api.deezer.com/album/544370/image",
+        "tracklist": "https://api.deezer.com/album/544370/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "916427",
+      "readable": true,
+      "title": "Superman",
+      "link": "http://www.deezer.com/track/916427",
+      "duration": "350",
+      "rank": "945798",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-d.deezer.com/stream/d8f61eaebd5d52bf859ea5ca93d68890-6.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "103248",
+        "title": "The Eminem Show",
+        "cover": "https://api.deezer.com/album/103248/image",
+        "tracklist": "https://api.deezer.com/album/103248/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "2951016",
+      "readable": true,
+      "title": "Crack A Bottle (Edited Version)",
+      "link": "http://www.deezer.com/track/2951016",
+      "duration": "315",
+      "rank": "928353",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-a.deezer.com/stream/ac7b76693a5ae27889bec05c66aa07f4-4.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "271960",
+        "title": "Crack A Bottle",
+        "cover": "https://api.deezer.com/album/271960/image",
+        "tracklist": "https://api.deezer.com/album/271960/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "662432",
+      "readable": true,
+      "title": "Lean Back [Remix feat. Lil Jon, Eminem, Mase & Remy Martin] (Album Version - Explicit) (Remix feat. Lil Jon, Eminem, Mase & Remy Martin - Explicit)",
+      "link": "http://www.deezer.com/track/662432",
+      "duration": "290",
+      "rank": "902762",
+      "explicit_lyrics": false,
+      "preview": "http://cdn-preview-3.deezer.com/stream/395f864a979fc3199f5f1c00e9b3f0db-4.mp3",
+      "artist": {
+        "id": "3813",
+        "name": "Fat Joe",
+        "link": "http://www.deezer.com/artist/3813",
+        "picture": "https://api.deezer.com/artist/3813/image",
+        "tracklist": "https://api.deezer.com/artist/3813/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "80363",
+        "title": "All Or Nothing",
+        "cover": "https://api.deezer.com/album/80363/image",
+        "tracklist": "https://api.deezer.com/album/80363/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "916426",
+      "readable": true,
+      "title": "Sing For The Moment",
+      "link": "http://www.deezer.com/track/916426",
+      "duration": "340",
+      "rank": "926841",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-c.deezer.com/stream/c7aac0111721e77976f1a7f8ae71022b-5.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "103248",
+        "title": "The Eminem Show",
+        "cover": "https://api.deezer.com/album/103248/image",
+        "tracklist": "https://api.deezer.com/album/103248/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "916414",
+      "readable": true,
+      "title": "Cleanin' Out My Closet",
+      "link": "http://www.deezer.com/track/916414",
+      "duration": "298",
+      "rank": "929101",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-d.deezer.com/stream/d4ec881cada3cd7ea535adb4041a77ac-5.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "103248",
+        "title": "The Eminem Show",
+        "cover": "https://api.deezer.com/album/103248/image",
+        "tracklist": "https://api.deezer.com/album/103248/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "1109739",
+      "readable": true,
+      "title": "Mockingbird (Album Version Explicit)",
+      "link": "http://www.deezer.com/track/1109739",
+      "duration": "251",
+      "rank": "937268",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-2.deezer.com/stream/203a013aebbcc976c5a988809590ca97-9.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "119606",
+        "title": "Curtain Call",
+        "cover": "https://api.deezer.com/album/119606/image",
+        "tracklist": "https://api.deezer.com/album/119606/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "1109729",
+      "readable": true,
+      "title": "My Name Is",
+      "link": "http://www.deezer.com/track/1109729",
+      "duration": "269",
+      "rank": "929002",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-4.deezer.com/stream/4bf8c8a898dda2dc163a015652ee7417-9.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "119606",
+        "title": "Curtain Call",
+        "cover": "https://api.deezer.com/album/119606/image",
+        "tracklist": "https://api.deezer.com/album/119606/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    },
+    {
+      "id": "72160313",
+      "readable": true,
+      "title": "Berzerk",
+      "link": "http://www.deezer.com/track/72160313",
+      "duration": "239",
+      "rank": "927479",
+      "explicit_lyrics": true,
+      "preview": "http://cdn-preview-5.deezer.com/stream/5801911d4ea7227bacf8f1ae338c4e56-3.mp3",
+      "artist": {
+        "id": "13",
+        "name": "Eminem",
+        "link": "http://www.deezer.com/artist/13",
+        "picture": "https://api.deezer.com/artist/13/image",
+        "tracklist": "https://api.deezer.com/artist/13/top?limit=50",
+        "type": "artist"
+      },
+      "album": {
+        "id": "7090505",
+        "title": "The Marshall Mathers LP2",
+        "cover": "https://api.deezer.com/album/7090505/image",
+        "tracklist": "https://api.deezer.com/album/7090505/tracks",
+        "type": "album"
+      },
+      "type": "track"
+    }
+  ],
+  "total": 375,
+  "next": "https://api.deezer.com/search?q=eminem&index=25"
+}
