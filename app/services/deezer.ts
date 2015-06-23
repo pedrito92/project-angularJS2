@@ -10,8 +10,9 @@ export class Deezer{
     searchPlaylist(search){
         let url:String = this.url+this.urlSearch+search;
         return new Promise((resolve, reject) => {
-            //fetch(url)
-            fetch('data/search.json')
+            fetch(url)
+            //fetch('data/search.json')
+            //fetch('https://api.deezer.com/album/302127')
             .then(response => response.json())
             .then(response => {
                     resolve(response); // resolve promise with response if it fetch succeded
@@ -24,8 +25,8 @@ export class Deezer{
     getPlaylist(pseudo = null){
         let url:String = this.url+this.urlUser+'/'+pseudo+this.urlPlaylist;
         return new Promise((resolve, reject) => {
-            //fetch(url)
-            fetch('data/playlist.json')
+            fetch(url)
+            //fetch('data/playlist.json')
                 .then(response => response.json())
                 .then(response => {
                     resolve(response); // resolve promise with response if it fetch succeded

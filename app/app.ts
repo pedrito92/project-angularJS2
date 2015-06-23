@@ -8,6 +8,7 @@ import {Deezer} from 'services/deezer';
 })
 @View({
   template: `<h1>Welcome !</h1>
+  <p>{{data}}</p>
   <p>
   {{playlist}}
       <!--<ul>-->
@@ -18,6 +19,7 @@ import {Deezer} from 'services/deezer';
   directives: [NgFor]
 })
 class App {
+  data: String;
   deezer: Deezer;
   user: Array<Object>;
   playlist: String;
@@ -26,6 +28,8 @@ class App {
 
     this.deezer.searchPlaylist('thomye').then(response => {
       console.log(response);
+      if(response!=null)
+        this.data = "Data received. Take a look in the console.";
       //this.user = response; // This first function is called if promise is fullfilled
     }, response => {
       console.warn('research failed'); // This second function is called if promise is rejected
