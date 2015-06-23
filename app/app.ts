@@ -10,7 +10,6 @@ import {Deezer} from 'services/deezer';
   template: `<h1>Welcome !</h1>
   <p>{{data}}</p>
   <p>
-  {{playlist}}
       <!--<ul>-->
         <!--<li *ng-for='#element of playlist'>{{element}}</li>-->
       <!--</ul>-->
@@ -23,6 +22,7 @@ class App {
   deezer: Deezer;
   user: Array<Object>;
   playlist: String;
+
   constructor(deezer: Deezer){
     this.deezer = deezer;
 
@@ -44,7 +44,7 @@ class App {
       //this.user = response; // This first function is called if promise is fullfilled
     }, response => {
       console.warn('Playlist loading failed'); // This second function is called if promise is rejected
-    });;
+    });
     console.log(this.playlist);
   }
 }

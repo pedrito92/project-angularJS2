@@ -5,7 +5,7 @@ export class Deezer{
     url:String = 'https://api.deezer.com';
     urlUser:String = '/user';
     urlPlaylist:String = '/playlists';
-    urlSearch:String = '/search?q=';
+    urlSearch:String = '/search/playlist?q=';
 
     searchPlaylist(search){
         let url:String = this.url+this.urlSearch+search;
@@ -22,11 +22,12 @@ export class Deezer{
         });
     }
 
-    getPlaylist(pseudo = null){
-        let url:String = this.url+this.urlUser+'/'+pseudo+this.urlPlaylist;
+    getUserDetails(id = null){
+        let url:String = (this.url+this.urlUser+id).toString();
+
         return new Promise((resolve, reject) => {
             fetch(url)
-            //fetch('data/playlist.json')
+                //fetch('data/playlist.json')
                 .then(response => response.json())
                 .then(response => {
                     resolve(response); // resolve promise with response if it fetch succeded
@@ -34,5 +35,24 @@ export class Deezer{
                     reject(); // reject promise if we catch a fetch error
                 });
         });
+    }
+
+    getPlaylist(url = null){
+        let regex: RegExp = /'https:\/\/api.deezer.com\/playlist\/[0-9]+\/tracks'/;
+        if(regex.test(url)){
+            return new Promise((resolve, reject) => {
+                fetch(url)
+                    //fetch('data/playlist.json')
+                    .then(response => response.json())
+                    .then(response => {
+                        resolve(response); // resolve promise with response if it fetch succeded
+                    }).catch(() => {
+                        reject(); // reject promise if we catch a fetch error
+                    });
+            });
+        }else{
+            return {'error':'L\'url fournit ne correspond pas'};
+        }
+
     }
 }
