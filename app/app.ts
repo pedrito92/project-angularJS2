@@ -26,7 +26,7 @@ class App {
   constructor(deezer: Deezer){
     this.deezer = deezer;
 
-    this.deezer.searchPlaylist('thomye').then(response => {
+    this.deezer.searchPlaylist('06Mart22').then(response => {
       console.log(response);
       if(response!=null)
         this.data = "Data received. Take a look in the console.";
