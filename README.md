@@ -4,6 +4,10 @@ Boilerplate for Angular2 learning
 
 Based on the angular boilerplate [angular2-seed](https://github.com/mgechev/angular2-seed) by [mgechev](https://github.com/mgechev)
 
+---
+
+Recherche et modifications de playlists via Deezer.
+
 # How to start
 
 ```bash
@@ -13,6 +17,10 @@ npm install
 npm install -g gulp # If you don't have gulp already installed
 gulp serve
 ```
+
+# Agile 
+
+[Trello](https://trello.com/b/FrfqAzGi/pb-angular-2)
 
 # License
 

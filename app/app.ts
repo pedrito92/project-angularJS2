@@ -14,7 +14,7 @@ import {Player} from 'components/player';
 })
 
 class App {
-	source: Array<Object>;
+	sources: Array<Object>;
 	deezer: Deezer;
   	user: Array<Object>;
   	playlist: String;
@@ -23,10 +23,9 @@ class App {
 	constructor(deezer: Deezer) {
 		console.log("I work !");
 
-		this.source = [
-			{ src: 'http://static.videogular.com/assets/videos/videogular.mp4', type: 'video/mp4' },
-			{ src: 'http://static.videogular.com/assets/videos/videogular.webm', type: 'video/webm' },
-			{ src: 'http://static.videogular.com/assets/videos/videogular.ogg', type: 'video/ogg' }
+		this.sources = [
+			{ src: 'http://www.noiseaddicts.com/samples_1w72b820/2545.mp3', type: 'audio/mp3' },
+			{ src: 'http://www.noiseaddicts.com/samples_1w72b820/279.mp3', type: 'audio/mp3' }
 		];
 
 		this.deezer = deezer;
