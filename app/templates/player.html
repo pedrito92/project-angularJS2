@@ -1,0 +1,6 @@
+<h3>Player</h3>
+
+<video (click)="playPause()" controls>
+    <!-- <source template="ng-for #video of src" [src]="video.src" [type]="video.type"> -->
+    <source *ng-for="#video of src" src="video.src" type="video.type">
+</video>
