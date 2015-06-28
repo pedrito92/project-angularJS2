@@ -84,6 +84,11 @@ class App {
 		this.budgetCigarettes += 0.35;
 
 		localStorage.setItem('total-cigarettes', this.totalCigarettes);
+		localStorage.setItem('cigarettes', this.totalCigarettes);
+
+		if(this.totalCigarettes == (this.dayGoal - 2)){
+			alert("Objectif bientôt atteint.");
+		}
 	}
 }
 
