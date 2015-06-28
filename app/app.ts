@@ -17,6 +17,10 @@ class App {
 	dayGoal: String;
 	totalCigarettes: String;
 	budgetCigarettes: String;
+	nbPacks: String;
+	pricePack: String;
+	cigarettesLeft: String;
+	cigarettePrice: String;
 
 	constructor() {
 		if (localStorage.getItem('week-goal')) {
@@ -31,10 +35,25 @@ class App {
 			this.dayGoal = '';
 		}
 
-		if (localStorage.getItem('cigarettes')) {
-			this.totalCigarettes = localStorage.getItem('cigarettes');
+		if (localStorage.getItem('price')) {
+			this.pricePack = localStorage.getItem('price');
+		} else {
+			this.pricePack = '';
+		}
+
+		if (localStorage.getItem('total-cigarettes')) {
+			this.totalCigarettes = localStorage.getItem('total-cigarettes');
+
+			if (localStorage.getItem('price')) {
+				this.cigarettePrice = localStorage.getItem('price') / 20;
+				this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
+			} else {
+				this.budgetCigarettes = Math.round(0.35 * this.totalCigarettes);
+			}
+
 		} else {
 			this.totalCigarettes = 0;
+			this.budgetCigarettes = 0;
 		}
 	}
 	  
@@ -48,9 +67,23 @@ class App {
 		localStorage.setItem('day-goal', this.dayGoal);
 	}
 
+	updatePricePack($event) {
+		this.pricePack = $event.target.value;
+		localStorage.setItem('price', this.pricePack);
+		this.cigarettePrice = this.pricePack / 20;
+		this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
+	}
+		 
+	updateNbPacks($event) {
+		this.nbPacks = $event.target.value;
+		localStorage.setItem('nb-packs', this.nbPacks);
+	}
+	
 	addACigarette() {
 		this.totalCigarettes++;
-		localStorage.setItem('cigarettes', this.totalCigarettes);
+		this.budgetCigarettes += 0.35;
+
+		localStorage.setItem('total-cigarettes', this.totalCigarettes);
 	}
 }
 
