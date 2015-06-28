@@ -1,7 +1,12 @@
 <h1>Welcome !</h1>
 
 <p>Objectif par jour: {{ dayGoal }}</p>
-<input #inputDayGoal type="number" (change)="doneTypingDay($event)">
+<input #inputDayGoal type="number" (change)="updateDayGoal($event)">
 
 <p>Objectif par semaine: {{ weekGoal }}</p>
-<input #inputWeekGoal type="number" (change)="doneTypingWeek($event)">
+<input #inputWeekGoal type="number" (change)="updateWeekGoal($event)">
+
+<p>Nombre de cigarettes consommées : {{ totalCigarettes }}</p>
+<p>Soit : {{ budgetCigarettes }}€</p>
+
+<button (click)="addACigarette()">Add A Cigarette</button>

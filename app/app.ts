@@ -15,6 +15,8 @@ class App {
 
 	weekGoal: String;
 	dayGoal: String;
+	totalCigarettes: String;
+	budgetCigarettes: String;
 
 	constructor() {
 		if (localStorage.getItem('week-goal')) {
@@ -28,16 +30,27 @@ class App {
 		} else {
 			this.dayGoal = '';
 		}
+
+		if (localStorage.getItem('cigarettes')) {
+			this.totalCigarettes = localStorage.getItem('cigarettes');
+		} else {
+			this.totalCigarettes = 0;
+		}
 	}
 	  
-	doneTypingWeek($event) {
+	updateWeekGoal($event) {
 		this.weekGoal = $event.target.value;
 		localStorage.setItem('week-goal', this.weekGoal);
 	}
 
-	doneTypingDay($event) {
+	updateDayGoal($event) {
 		this.dayGoal = $event.target.value;
 		localStorage.setItem('day-goal', this.dayGoal);
+	}
+
+	addACigarette() {
+		this.totalCigarettes++;
+		localStorage.setItem('cigarettes', this.totalCigarettes);
 	}
 }
 
