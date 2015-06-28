@@ -9,6 +9,7 @@
 <input type="number" (change)="updateWeekGoal($event)" placeholder="Nouvel objectif par semaine">
 
 <h2>Stocks</h2>
+
 <p *ng-if="pricePack">Prix du paquet: {{ pricePack }}</p>
 <input type="number" (change)="updatePricePack($event)" placeholder="Prix du paquet">
 
