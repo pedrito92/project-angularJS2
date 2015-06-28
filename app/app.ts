@@ -101,8 +101,8 @@ class App {
 			alert("Objectif bientôt atteint.");
 		}
 
-		if((this.nbPacks * 20) - this.totalCigarettes == 0){
-			alert("Vous avez bientôt plus de cigarettes dans votre paquet. Il va falloir penser à en racheter.")
+		if((this.nbPacks * 20) - this.totalCigarettes == 5){
+			alert("Vous n'avez bientôt plus de cigarettes dans votre paquet. Il va falloir penser à en racheter.")
 		}
 	}
 }
