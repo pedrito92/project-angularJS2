@@ -100,6 +100,10 @@ class App {
 		if(this.totalCigarettes == (this.dayGoal - 2)){
 			alert("Objectif bientôt atteint.");
 		}
+
+		if((this.nbPacks * 20) - this.totalCigarettes == 0){
+			alert("Vous avez bientôt plus de cigarettes dans votre paquet. Il va falloir penser à en racheter.")
+		}
 	}
 }
 
