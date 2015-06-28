@@ -14,6 +14,8 @@
 
 <p>Nombre de cigarettes consommées : {{ totalCigarettes }}</p>
 <p>Soit : {{ budgetCigarettes }}€</p>
-<p>Il vous reste {{ cigarettesLeft }} cigarettes</p>
+
+<p *ng-if="cigarettesLeft > 0">Il vous reste {{ cigarettesLeft }} cigarettes</p>
+<p *ng-if="cigarettesLeft <= 0">Il ne vous reste plus aucune cigarette</p>
 
 <button (click)="addACigarette()">Add A Cigarette</button>
