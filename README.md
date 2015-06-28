@@ -1,12 +1,6 @@
 # Introduction
 
-Boilerplate for Angular2 learning
-
-Based on the angular boilerplate [angular2-seed](https://github.com/mgechev/angular2-seed) by [mgechev](https://github.com/mgechev)
-
----
-
-Recherche et modifications de playlists via Deezer.
+Calculateur de sa consommation de cigarettes !
 
 # How to start
 
@@ -21,7 +15,3 @@ gulp serve
 # Agile 
 
 [Trello](https://trello.com/b/FrfqAzGi/pb-angular-2)
-
-# License
-
-MIT
