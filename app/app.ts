@@ -1,8 +1,9 @@
 /// <reference path='../typings/tsd.d.ts' />
 import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
+//import {Moment} from 'moment';
 
 @Component({
-  selector: 'app',
+	selector: 'app',
 })
 
 @View({
@@ -21,6 +22,8 @@ class App {
 	cigarettesLeft: Number;
 	cigarettePrice: Number;
 	beginDate: Date;
+	todayCount: Number;
+	weekCount: Number;
 
 	constructor() {
 
@@ -53,7 +56,46 @@ class App {
 			// var dayWrapper = moment().format('DD/MM/YYYY');
 			// console.log(dayWrapper);
 			// console.log(moment());
-			// this.beginDate = localStorage.getItem('begin-date');
+			this.beginDate = localStorage.getItem('begin-date');
+		}
+
+		if (localStorage.getItem('week-count')) {
+			let weekJsonReceived = JSON.parse(localStorage.getItem('week-count'));
+			
+			if (weekJsonReceived.week != moment().week()) {
+				weekJsonReceived.week = moment().week();
+				weekJsonReceived.nb = 0;
+
+				localStorage.setItem('week-count', JSON.stringify(weekJsonReceived));
+			}
+
+			this.weekCount = weekJsonReceived.nb;
+
+		} else {
+			this.weekCount = 0;
+			let weekJsonSend = { 'week': moment().week(), 'nb': this.weekCount };
+
+			localStorage.setItem('week-count', JSON.stringify(weekJsonSend));
+		}
+
+
+		if (localStorage.getItem('day-count')) {
+			let dayJsonReceived = JSON.parse(localStorage.getItem('day-count'));
+	
+			if (dayJsonReceived.day != moment().format("MM/DD/YYYY")) {
+				dayJsonReceived.day = moment().format("MM/DD/YYYY");
+				dayJsonReceived.nb = 0;
+				
+				localStorage.setItem('day-count', JSON.stringify(dayJsonReceived));
+			}
+			
+			this.dayCount = dayJsonReceived.nb;
+
+		} else {
+			this.dayCount = 0;
+			let dayJsonSend = { 'day': moment().format("MM/DD/YYYY"), 'nb': this.dayCount };
+			
+			localStorage.setItem('day-count', JSON.stringify(dayJsonSend));
 		}
 
 		if (localStorage.getItem('price')) {
@@ -101,12 +143,21 @@ class App {
 
 	addACigarette() {
 		this.totalCigarettes++;
+		this.weekCount++;
+		this.dayCount++;
 		this.budgetCigarettes = parseFloat(Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100);
-		console.log(this.cigarettePrice);
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
 		localStorage.setItem('total-cigarettes', this.totalCigarettes.toString());
 		localStorage.setItem('cigarettes', this.totalCigarettes.toString());
+		
+		let weekCount = JSON.parse(localStorage.getItem('week-count'));
+		weekCount.nb = this.weekCount;
+		localStorage.setItem('week-count', JSON.stringify(weekCount));
+
+		let dayCount = JSON.parse(localStorage.getItem('day-count'));
+		dayCount.nb = this.dayCount;
+		localStorage.setItem('day-count', JSON.stringify(dayCount));
 
 		if (localStorage.getItem('begin-date')) {
 			this.beginDate = localStorage.getItem('begin-date');
@@ -114,9 +165,9 @@ class App {
 			this.beginDate = new Date();
 			localStorage.setItem('begin-date', this.beginDate);
 		}
-
+		
 		// Alerts
-		if(this.totalCigarettes == (this.dayGoal - 2)){
+		if (this.totalCigarettes == (this.dayGoal - 2)) {
 			alert("Objectif bientôt atteint.");
 		}
 		if((this.nbPacks * 20) - this.totalCigarettes == 5){
