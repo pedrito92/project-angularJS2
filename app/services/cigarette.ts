@@ -1,4 +1,4 @@
-import {LocalStorage} from 'localstorage'
+import {LocalStorage} from 'services/localstorage'
 
 export class Cigarette{
     localstorage:LocalStorage;
