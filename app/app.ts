@@ -52,16 +52,16 @@ class App {
 			this.beginDate = localStorage.getItem('begin-date');
 		}
 
+		if (localStorage.getItem('price')) {
+			this.cigarettePrice = parseInt(localStorage.getItem('price')) / 20;
+			
+		} else {
+			this.cigarettePrice = 0.35;
+		}
+
 		if (localStorage.getItem('total-cigarettes')) {
 			this.totalCigarettes = localStorage.getItem('total-cigarettes');
-
-			if (localStorage.getItem('price')) {
-				this.cigarettePrice = parseInt(localStorage.getItem('price')) / 20;
-				this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
-			} else {
-				this.budgetCigarettes = Math.round(0.35 * this.totalCigarettes);
-			}
-
+			this.budgetCigarettes = Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100;
 			this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
 		} else {
@@ -83,6 +83,7 @@ class App {
 	updatePricePack($event) {
 		this.pricePack = $event.target.value;
 		this.cigarettePrice = this.pricePack / 20;
+		console.log(this.cigarettePrice);
 		this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
 
 		localStorage.setItem('price', this.pricePack.toString());
@@ -97,7 +98,8 @@ class App {
 
 	addACigarette() {
 		this.totalCigarettes++;
-		this.budgetCigarettes += 0.35;
+		this.budgetCigarettes = parseFloat(Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100);
+		console.log(this.cigarettePrice);
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
 		localStorage.setItem('total-cigarettes', this.totalCigarettes.toString());
