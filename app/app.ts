@@ -3,7 +3,6 @@ import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 
 @Component({
   selector: 'app',
-  //appInjector: [Deezer]
 })
 
 @View({
@@ -13,28 +12,28 @@ import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 
 class App {
 
-	weekGoal: String;
-	dayGoal: String;
-	totalCigarettes: String;
+	weekGoal: int;
+	dayGoal: int;
+	totalCigarettes: int;
 	budgetCigarettes: String;
-	nbPacks: String;
+	nbPacks: int;
 	pricePack: String;
-	cigarettesLeft: String;
+	cigarettesLeft: int;
 	cigarettePrice: String;
 	beginDate: String;
 
 	constructor() {
 
 		if (localStorage.getItem('week-goal')) {
-			this.weekGoal = localStorage.getItem('week-goal');
+			this.weekGoal = parseInt(localStorage.getItem('week-goal'));
 		} else {
-			this.weekGoal = '';
+			this.weekGoal = 0;
 		}
 
 		if (localStorage.getItem('day-goal')) {
-			this.dayGoal = localStorage.getItem('day-goal');
+			this.dayGoal = parseInt(localStorage.getItem('day-goal'));
 		} else {
-			this.dayGoal = '';
+			this.dayGoal = 0;
 		}
 
 		if (localStorage.getItem('price')) {
@@ -44,9 +43,9 @@ class App {
 		}
 
 		if (localStorage.getItem('nb-packs')) {
-			this.nbPacks = localStorage.getItem('nb-packs');
+			this.nbPacks = parseInt(localStorage.getItem('nb-packs'));
 		} else {
-			this.nbPacks = '';
+			this.nbPacks = 0;
 		}
 
 		if (localStorage.getItem('begin-date')) {
@@ -57,7 +56,7 @@ class App {
 			this.totalCigarettes = localStorage.getItem('total-cigarettes');
 
 			if (localStorage.getItem('price')) {
-				this.cigarettePrice = localStorage.getItem('price') / 20;
+				this.cigarettePrice = parseInt(localStorage.getItem('price')) / 20;
 				this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
 			} else {
 				this.budgetCigarettes = Math.round(0.35 * this.totalCigarettes);
@@ -67,18 +66,18 @@ class App {
 
 		} else {
 			this.totalCigarettes = 0;
-			this.budgetCigarettes = 0;
+			this.budgetCigarettes = '0';
 		}
 	}
 	  
 	updateWeekGoal($event) {
 		this.weekGoal = $event.target.value;
-		localStorage.setItem('week-goal', this.weekGoal);
+		localStorage.setItem('week-goal', this.weekGoal.toString());
 	}
 
 	updateDayGoal($event) {
 		this.dayGoal = $event.target.value;
-		localStorage.setItem('day-goal', this.dayGoal);
+		localStorage.setItem('day-goal', this.dayGoal.toString());
 	}
 
 	updatePricePack($event) {
@@ -90,10 +89,10 @@ class App {
 	}
 
 	updateNbPacks($event) {
-		this.nbPacks = parseFloat(this.nbPacks) + parseFloat($event.target.value);
+		this.nbPacks = this.nbPacks + parseFloat($event.target.value);
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
-		localStorage.setItem('nb-packs', this.nbPacks);
+		localStorage.setItem('nb-packs', this.nbPacks.toString());
 	}
 
 	addACigarette() {
@@ -101,8 +100,8 @@ class App {
 		this.budgetCigarettes += 0.35;
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
-		localStorage.setItem('total-cigarettes', this.totalCigarettes);
-		localStorage.setItem('cigarettes', this.totalCigarettes);
+		localStorage.setItem('total-cigarettes', this.totalCigarettes.toString());
+		localStorage.setItem('cigarettes', this.totalCigarettes.toString());
 
 		if (localStorage.getItem('begin-date')) {
 			this.beginDate = localStorage.getItem('begin-date');
@@ -124,7 +123,7 @@ class App {
 		this.nbPacks++;
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 		
-		localStorage.setItem('nb-packs', this.nbPacks);
+		localStorage.setItem('nb-packs', this.nbPacks.toString());
 	}
 }
 
