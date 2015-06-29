@@ -89,11 +89,11 @@ class App {
 				localStorage.setItem('day-count', JSON.stringify(dayJsonReceived));
 			}
 			
-			this.dayCount = dayJsonReceived.nb;
+			this.todayCount = dayJsonReceived.nb;
 
 		} else {
-			this.dayCount = 0;
-			let dayJsonSend = { 'day': moment().format("MM/DD/YYYY"), 'nb': this.dayCount };
+			this.todayCount = 0;
+			let dayJsonSend = { 'day': moment().format("MM/DD/YYYY"), 'nb': this.todayCount };
 			
 			localStorage.setItem('day-count', JSON.stringify(dayJsonSend));
 		}
@@ -144,7 +144,7 @@ class App {
 	addACigarette() {
 		this.totalCigarettes++;
 		this.weekCount++;
-		this.dayCount++;
+		this.todayCount++;
 		this.budgetCigarettes = parseFloat(Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100);
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
@@ -156,7 +156,7 @@ class App {
 		localStorage.setItem('week-count', JSON.stringify(weekCount));
 
 		let dayCount = JSON.parse(localStorage.getItem('day-count'));
-		dayCount.nb = this.dayCount;
+		dayCount.nb = this.todayCount;
 		localStorage.setItem('day-count', JSON.stringify(dayCount));
 
 		if (localStorage.getItem('begin-date')) {
