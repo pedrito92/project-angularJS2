@@ -52,7 +52,9 @@ class App {
 		}
 
 		if (localStorage.getItem('begin-date')) {
-			this.beginDate = localStorage.getItem('begin-date');
+			// Date format
+			date = new Date(localStorage.getItem('begin-date'));
+			this.beginDate = moment(date).format('DD/MM/YYYY');
 		}
 
 		if (localStorage.getItem('week-count')) {
@@ -156,7 +158,9 @@ class App {
 		localStorage.setItem('day-count', JSON.stringify(dayCount));
 
 		if (localStorage.getItem('begin-date')) {
-			this.beginDate = localStorage.getItem('begin-date');
+			// Date format
+			date = new Date(localStorage.getItem('begin-date'));
+			this.beginDate = moment(date).format('DD/MM/YYYY');
 		} else {
 			this.beginDate = new Date();
 			localStorage.setItem('begin-date', this.beginDate);
