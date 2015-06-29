@@ -1,9 +1,9 @@
 /// <reference path='../typings/tsd.d.ts' />
 import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
-//import {Moment} from 'moment';
+import {Cigarette} from 'services/cigarette'
 
 @Component({
-	selector: 'app',
+  	selector: 'app'
 })
 
 @View({
@@ -12,6 +12,7 @@ import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 })
 
 class App {
+	cigarette: Cigarette;
 
 	weekGoal: Number;
 	dayGoal: Number;
@@ -26,6 +27,7 @@ class App {
 	weekCount: Number;
 
 	constructor() {
+		this.cigarette = new Cigarette();
 
 		if (localStorage.getItem('week-goal')) {
 			this.weekGoal = parseInt(localStorage.getItem('week-goal'));
@@ -53,7 +55,7 @@ class App {
 
 		if (localStorage.getItem('begin-date')) {
 			// Date format
-			date = new Date(localStorage.getItem('begin-date'));
+			let date = new Date(localStorage.getItem('begin-date'));
 			this.beginDate = moment(date).format('DD/MM/YYYY');
 		}
 
@@ -116,6 +118,7 @@ class App {
 	updateWeekGoal($event) {
 		this.weekGoal = $event.target.value;
 		localStorage.setItem('week-goal', this.weekGoal.toString());
+		//this.cigarette.setWeekGoal($event.target.value);
 	}
 
 	updateDayGoal($event) {
@@ -159,7 +162,7 @@ class App {
 
 		if (localStorage.getItem('begin-date')) {
 			// Date format
-			date = new Date(localStorage.getItem('begin-date'));
+			let date = new Date(localStorage.getItem('begin-date'));
 			this.beginDate = moment(date).format('DD/MM/YYYY');
 		} else {
 			this.beginDate = new Date();
