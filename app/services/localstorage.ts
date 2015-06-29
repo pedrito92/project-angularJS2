@@ -7,6 +7,10 @@ export class LocalStorage{
         localStorage.setItem(key, date.toString());
     }
 
+    saveJson(key:string, json:string){
+        localStorage.setItem(key, json);
+    }
+
     get(key:string){
         return localStorage.getItem(key);
     }

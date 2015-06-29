@@ -6,6 +6,7 @@
 
 		<p *ng-if="totalCigarettes && beginDate">Vous avez consommé {{ totalCigarettes }} cigarettes depuis le {{beginDate}}, <span [class.red]="getTodayClass()">{{todayCount}} cigarettes</span> aujourd'hui et <span [class.red]="getWeekClass()">{{weekCount}} cigarettes</span> depuis le début de la semaine.</p>
 		<p *ng-if="budgetCigarettes">Cela vous a coûté {{ budgetCigarettes }}€.</p>
+		<p *ng-if="messageSuggestion" class="red">{{messageSuggestion}}</p>
 
 		<p *ng-if="cigarettesLeft > 0">Il vous reste {{ cigarettesLeft }} cigarettes.</p>
 		<p *ng-if="cigarettesLeft && cigarettesLeft <= 0">Il ne vous reste plus aucune cigarette.</p>
