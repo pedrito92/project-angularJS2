@@ -4,7 +4,7 @@
 			<h1>Calculez votre consommation de cigarettes</h1>
 		</div>
 
-		<p *ng-if="totalCigarettes && beginDate">Vous avez consommé {{ totalCigarettes }} cigarettes depuis le {{beginDate}}, {{dayCount}} cigarettes aujourd'hui et {{weekCount}} cigarettes depuis le début de la semaine.</p>
+		<p *ng-if="totalCigarettes && beginDate">Vous avez consommé {{ totalCigarettes }} cigarettes depuis le {{beginDate}}, <span [class.red]="getTodayClass()">{{todayCount}} cigarettes</span> aujourd'hui et <span [class.red]="getWeekClass()">{{weekCount}} cigarettes</span> depuis le début de la semaine.</p>
 		<p *ng-if="budgetCigarettes">Cela vous a coûté {{ budgetCigarettes }}€.</p>
 
 		<p *ng-if="cigarettesLeft > 0">Il vous reste {{ cigarettesLeft }} cigarettes.</p>
@@ -17,26 +17,26 @@
 
 		<div class="panel panel-default">
 			<div  *ng-if="dayGoal" class="panel-heading">
-				<h3 class="panel-title">Votre objectif <strong>/jour</strong> actuel est de <strong>{{ dayGoal }}</strong> cigarettes maximum</h3>
+				<h3 class="panel-title">Votre objectif <strong>/jour</strong> actuel est de <strong class="orange">{{ dayGoal }}</strong> cigarettes maximum</h3>
 			</div>
 
 		  	<div class="panel-body">	
 				<div class="form-group">
-					<label for="">Définir un nouvel objectif <strong>/jour</strong></label>
-		  			<input type="number" (change)="updateDayGoal($event)" class="form-control" placeholder="Nouvel objectif">
+					<label for="dayGoal">Définir un nouvel objectif <strong>/jour</strong></label>
+		  			<input type="number" id="dayGoal" (change)="updateDayGoal($event)" class="form-control" placeholder="Nouvel objectif">
 				</div>
 		  	</div>
 		</div>
 
 		<div class="panel panel-default">
 			<div  *ng-if="weekGoal" class="panel-heading">
-				<h3 class="panel-title">Votre objectif <strong>/semaine</strong> actuel est de <strong>{{ weekGoal }}</strong> cigarettes maximum</h3>
+				<h3 class="panel-title">Votre objectif <strong>/semaine</strong> actuel est de <strong class="orange">{{ weekGoal }}</strong> cigarettes maximum</h3>
 			</div>
 
 		  	<div class="panel-body">	
 				<div class="form-group">
-					<label for="">Définir un nouvel objectif <strong>/semaine</strong></label>
-		  			<input type="number" (change)="updateWeekGoal($event)" class="form-control" placeholder="Nouvel objectif">
+					<label for="weekGoal">Définir un nouvel objectif <strong>/semaine</strong></label>
+		  			<input type="number" id="weekGoal" (change)="updateWeekGoal($event)" class="form-control" placeholder="Nouvel objectif">
 				</div>
 		  	</div>
 		</div>
@@ -50,8 +50,8 @@
 
 		  	<div class="panel-body">	
 				<div class="form-group">
-					<label for="">Définir le prix de votre paquet de cigarettes</label>
-		  			<input type="number" (change)="updatePricePack($event)" class="form-control" placeholder="Prix du paquet">
+					<label for="price">Définir le prix de votre paquet de cigarettes</label>
+		  			<input type="number" id="price" (change)="updatePricePack($event)" class="form-control" placeholder="Prix du paquet">
 				</div>
 		  	</div>
 		</div>
@@ -63,8 +63,8 @@
 
 		  	<div class="panel-body">	
 				<div class="form-group">
-					<label for="">Ajoutez le nombre de nouveaux paquets de cigarettes achetés</label>
-		  			<input type="number" (change)="updateNbPacks($event)" class="form-control" placeholder="Nombre de paquets achetés">
+					<label for="packs">Ajoutez le nombre de nouveaux paquets de cigarettes achetés</label>
+		  			<input type="number" id="packs" (change)="updateNbPacks($event)" class="form-control" placeholder="Nombre de paquets achetés">
 				</div>
 		  	</div>
 		</div>

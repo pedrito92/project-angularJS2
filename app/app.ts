@@ -1,6 +1,5 @@
 /// <reference path='../typings/tsd.d.ts' />
-import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
-//import {Moment} from 'moment';
+import {Component, View, bootstrap, NgFor, NgIf, } from 'angular2/angular2';
 
 @Component({
 	selector: 'app',
@@ -167,14 +166,19 @@ class App {
 		}
 		
 		// Alerts
-		if (this.totalCigarettes == (this.dayGoal - 2)) {
-			alert("Objectif bientôt atteint.");
+		if (this.todayCount == (this.dayGoal - 2)) {
+			alert("Objectif quotidien bientôt atteint.");
 		}
-		if((this.nbPacks * 20) - this.totalCigarettes == 5){
+
+		if (this.weekCount == (this.weekGoal - 2)) {
+			alert("Objectif de la semaine bientôt atteint.");
+		} 
+
+		if ((this.nbPacks * 20) - this.totalCigarettes == 5){
 			alert("Vous n'avez bientôt plus de cigarettes dans votre paquet. Il va falloir penser à en racheter.")
 		}
 	}
-
+	
 	addAPack() {
 		this.nbPacks++;
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
@@ -198,6 +202,18 @@ class App {
 		this.weekCount = undefined;
 
 		location.reload();
+	}
+
+	getTodayClass() {
+		if (this.todayCount >= this.dayGoal) {
+			return true;
+		} 
+	}
+
+	getWeekClass() {
+		if (this.weekCount >= this.weekGoal) {
+			return true;
+		} 
 	}
 }
 
