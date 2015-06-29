@@ -49,15 +49,21 @@ class App {
 		}
 
 		if (localStorage.getItem('begin-date')) {
-			this.beginDate = localStorage.getItem('begin-date');
+			// var day = new Date(2011, 9, 16);
+			// var dayWrapper = moment().format('DD/MM/YYYY');
+			// console.log(dayWrapper);
+			// console.log(moment());
+			// this.beginDate = localStorage.getItem('begin-date');
 		}
 
 		if (localStorage.getItem('total-cigarettes')) {
 			this.totalCigarettes = localStorage.getItem('total-cigarettes');
 
 			if (localStorage.getItem('price')) {
+
 				this.cigarettePrice = parseInt(localStorage.getItem('price')) / 20;
 				this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
+
 			} else {
 				this.budgetCigarettes = Math.round(0.35 * this.totalCigarettes);
 			}
