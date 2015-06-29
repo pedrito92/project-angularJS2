@@ -16,17 +16,17 @@ class App {
 	cigarette: Cigarette;
 
 	messageSuggestion: String;
-	weekGoal: Number;
-	dayGoal: Number;
+	weekGoal: Number = 0;
+	dayGoal: Number = 0;
 	totalCigarettes: Number = 0;
 	budgetCigarettes: Number = 0;
-	nbPacks: Number;
-	pricePack: Number;
-	cigarettesLeft: Number;
-	cigarettePrice: Number;
+	nbPacks: Number = 0;
+	pricePack: Number = 0;
+	cigarettesLeft: Number = 0;
+	cigarettePrice: Number = 0;
 	beginDate: Date;
-	todayCount: Number;
-	weekCount: Number;
+	todayCount: Number = 0;
+	weekCount: Number = 0;
 
 	constructor() {
 		this.cigarette = new Cigarette();
@@ -47,6 +47,7 @@ class App {
 			this.cigarettesLeft = cigarettes.left;
 		}
 
+		console.log(this.todayCount);
 		this.addASuggestion(this.budgetCigarettes);
 
 	}
@@ -80,13 +81,12 @@ class App {
 	  
 	updateWeekGoal($event) {
 		this.weekGoal = $event.target.value;
-		localStorage.setItem('week-goal', this.weekGoal.toString());
-		//this.cigarette.setWeekGoal($event.target.value);
+		this.cigarette.setWeekGoal($event.target.value);
 	}
 
 	updateDayGoal($event) {
 		this.dayGoal = $event.target.value;
-		localStorage.setItem('day-goal', this.dayGoal.toString());
+		this.cigarette.setDayGoal($event.target.value);
 	}
 
 	updatePricePack($event) {
@@ -94,17 +94,18 @@ class App {
 		this.cigarettePrice = this.pricePack / 20;
 		this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
 
-		localStorage.setItem('price', this.pricePack.toString());
+		this.cigarette.setPricePack($event.target.value);
 	}
 
 	updateNbPacks($event) {
 		this.nbPacks = this.nbPacks + parseFloat($event.target.value);
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
-		localStorage.setItem('nb-packs', this.nbPacks.toString());
+		this.cigarette.setNbPacks($event.target.value);
 	}
 
 	addACigarette() {
+		console.log(this.todayCount);
 		this.totalCigarettes++;
 		this.weekCount++;
 		this.todayCount++;
@@ -130,7 +131,7 @@ class App {
 			let date = new Date(localStorage.getItem('begin-date'));
 			this.beginDate = moment(date).format('DD/MM/YYYY');
 		} else {
-			this.beginDate = new Date();
+			this.beginDate = moment().format('DD/MM/YYYY');
 			localStorage.setItem('begin-date', this.beginDate);
 		}
 		

@@ -91,6 +91,8 @@ export class Cigarette{
 
             this.localstorage.saveJson('week-count', JSON.stringify(weekJsonSend));
         }
+
+        return this.weekCount;
     }
 
     getDayCount(){
@@ -112,6 +114,8 @@ export class Cigarette{
 
             this.localstorage.saveJson('day-count', JSON.stringify(dayJsonSend));
         }
+
+        return this.todayCount;
     }
     
     getTotalCigarette(){
@@ -119,7 +123,11 @@ export class Cigarette{
         this.budgetCigarettes = Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100;
         this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
-        let cigarettes;
+        let cigarettes = {
+            total:0,
+            budget:0,
+            left:0
+        };
 
         if (this.localstorage.get('total-cigarettes')) {
             this.totalCigarettes = localStorage.getItem('total-cigarettes');
