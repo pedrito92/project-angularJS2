@@ -12,15 +12,15 @@ import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 
 class App {
 
-	weekGoal: int;
-	dayGoal: int;
-	totalCigarettes: int;
-	budgetCigarettes: String;
-	nbPacks: int;
-	pricePack: String;
-	cigarettesLeft: int;
-	cigarettePrice: String;
-	beginDate: String;
+	weekGoal: Number;
+	dayGoal: Number;
+	totalCigarettes: Number;
+	budgetCigarettes: Number;
+	nbPacks: Number;
+	pricePack: Number;
+	cigarettesLeft: Number;
+	cigarettePrice: Number;
+	beginDate: Date;
 
 	constructor() {
 
@@ -39,7 +39,7 @@ class App {
 		if (localStorage.getItem('price')) {
 			this.pricePack = localStorage.getItem('price');
 		} else {
-			this.pricePack = '';
+			this.pricePack = 0;
 		}
 
 		if (localStorage.getItem('nb-packs')) {
@@ -66,7 +66,7 @@ class App {
 
 		} else {
 			this.totalCigarettes = 0;
-			this.budgetCigarettes = '0';
+			this.budgetCigarettes = 0;
 		}
 	}
 	  
@@ -85,7 +85,7 @@ class App {
 		this.cigarettePrice = this.pricePack / 20;
 		this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
 
-		localStorage.setItem('price', this.pricePack);
+		localStorage.setItem('price', this.pricePack.toString());
 	}
 
 	updateNbPacks($event) {
