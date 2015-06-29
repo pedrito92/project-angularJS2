@@ -176,13 +176,13 @@ class App {
 	}
 
 	getTodayClass() {
-		if (this.todayCount >= this.dayGoal) {
+		if (this.dayGoal && this.todayCount >= this.dayGoal) {
 			return true;
 		} 
 	}
-
+	
 	getWeekClass() {
-		if (this.weekCount >= this.weekGoal) {
+		if (this.weekGoal && this.weekCount >= this.weekGoal) {
 			return true;
 		} 
 	}
