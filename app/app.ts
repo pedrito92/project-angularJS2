@@ -181,6 +181,24 @@ class App {
 		
 		localStorage.setItem('nb-packs', this.nbPacks.toString());
 	}
+
+	resetAll() {
+		localStorage.clear();
+
+		this.weekGoal = undefined;
+		this.dayGoal = undefined;
+		this.totalCigarettes = undefined;
+		this.budgetCigarettes = undefined;
+		this.nbPacks = undefined;
+		this.pricePack = undefined;
+		this.cigarettesLeft = undefined;
+		this.cigarettePrice = undefined;
+		this.beginDate = undefined;
+		this.todayCount = undefined;
+		this.weekCount = undefined;
+
+		location.reload();
+	}
 }
 
 bootstrap(App);
