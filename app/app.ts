@@ -17,8 +17,8 @@ class App {
 	messageSuggestion: String;
 	weekGoal: Number;
 	dayGoal: Number;
-	totalCigarettes: Number;
-	budgetCigarettes: Number;
+	totalCigarettes: Number = 0;
+	budgetCigarettes: Number = 0;
 	nbPacks: Number;
 	pricePack: Number;
 	cigarettesLeft: Number;
@@ -30,89 +30,20 @@ class App {
 	constructor() {
 		this.cigarette = new Cigarette();
 
-		if (localStorage.getItem('week-goal')) {
-			this.weekGoal = parseInt(localStorage.getItem('week-goal'));
-		} else {
-			this.weekGoal = 0;
-		}
+		this.weekGoal = this.cigarette.getWeekGoal();
+		this.dayGoal = this.cigarette.getDayGoal();
+		this.pricePack = this.cigarette.getPricePack();
+		this.nbPacks = this.cigarette.getNbPack();
+		this.beginDate = this.cigarette.getBeginDate();
+		this.cigarettePrice = this.cigarette.getCigarettePrice();
+		this.weekCount = this.cigarette.getWeekCount();
+		this.todayCount = this.cigarette.getDayCount();
 
-		if (localStorage.getItem('day-goal')) {
-			this.dayGoal = parseInt(localStorage.getItem('day-goal'));
-		} else {
-			this.dayGoal = 0;
-		}
-
-		if (localStorage.getItem('price')) {
-			this.pricePack = localStorage.getItem('price');
-		} else {
-			this.pricePack = 0;
-		}
-
-		if (localStorage.getItem('nb-packs')) {
-			this.nbPacks = parseInt(localStorage.getItem('nb-packs'));
-		} else {
-			this.nbPacks = 0;
-		}
-
-		if (localStorage.getItem('begin-date')) {
-			// Date format
-			let date = new Date(localStorage.getItem('begin-date'));
-			this.beginDate = moment(date).format('DD/MM/YYYY');
-		}
-
-		if (localStorage.getItem('week-count')) {
-			let weekJsonReceived = JSON.parse(localStorage.getItem('week-count'));
-			
-			if (weekJsonReceived.week != moment().week()) {
-				weekJsonReceived.week = moment().week();
-				weekJsonReceived.nb = 0;
-
-				localStorage.setItem('week-count', JSON.stringify(weekJsonReceived));
-			}
-
-			this.weekCount = weekJsonReceived.nb;
-
-		} else {
-			this.weekCount = 0;
-			let weekJsonSend = { 'week': moment().week(), 'nb': this.weekCount };
-
-			localStorage.setItem('week-count', JSON.stringify(weekJsonSend));
-		}
-
-
-		if (localStorage.getItem('day-count')) {
-			let dayJsonReceived = JSON.parse(localStorage.getItem('day-count'));
-	
-			if (dayJsonReceived.day != moment().format("MM/DD/YYYY")) {
-				dayJsonReceived.day = moment().format("MM/DD/YYYY");
-				dayJsonReceived.nb = 0;
-				
-				localStorage.setItem('day-count', JSON.stringify(dayJsonReceived));
-			}
-			
-			this.todayCount = dayJsonReceived.nb;
-
-		} else {
-			this.todayCount = 0;
-			let dayJsonSend = { 'day': moment().format("MM/DD/YYYY"), 'nb': this.todayCount };
-			
-			localStorage.setItem('day-count', JSON.stringify(dayJsonSend));
-		}
-
-		if (localStorage.getItem('price')) {
-			this.cigarettePrice = parseInt(localStorage.getItem('price')) / 20;
-			
-		} else {
-			this.cigarettePrice = 0.35;
-		}
-
-		if (localStorage.getItem('total-cigarettes')) {
-			this.totalCigarettes = localStorage.getItem('total-cigarettes');
-			this.budgetCigarettes = Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100;
-			this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
-		} else {
-			this.totalCigarettes = 0;
-			this.budgetCigarettes = 0;
+		let cigarettes = this.cigarette.getTotalCigarette();
+		if(typeof cigarettes == undefined){
+			this.totalCigarettes = cigarettes.total;
+			this.budgetCigarettes = cigarettes.budget;
+			this.cigarettesLeft = cigarettes.left;
 		}
 
 		this.addASuggestion(this.budgetCigarettes);
