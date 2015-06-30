@@ -92,7 +92,7 @@ class App {
 	updatePricePack($event) {
 		this.pricePack = $event.target.value;
 		this.cigarettePrice = this.pricePack / 20;
-		this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
+		this.budgetCigarettes = parseFloat(Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100);
 
 		this.cigarette.setPricePack($event.target.value);
 	}
