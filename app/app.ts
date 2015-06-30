@@ -42,13 +42,12 @@ class App {
 		this.todayCount = this.cigarette.getDayCount();
 
 		let cigarettes = this.cigarette.getTotalCigarette();
-		if(typeof cigarettes == undefined){
+		if(typeof cigarettes == typeof {}){
 			this.totalCigarettes = cigarettes.total;
 			this.budgetCigarettes = cigarettes.budget;
 			this.cigarettesLeft = cigarettes.left;
 		}
 
-		console.log(this.todayCount);
 		this.addASuggestion(this.budgetCigarettes);
 
 	}
@@ -116,23 +115,9 @@ class App {
 
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
-		localStorage.setItem('total-cigarettes', this.totalCigarettes.toString());
-		localStorage.setItem('cigarettes', this.totalCigarettes.toString());
-		
-		let weekCount = JSON.parse(localStorage.getItem('week-count'));
-		weekCount.nb = this.weekCount;
-		localStorage.setItem('week-count', JSON.stringify(weekCount));
 
-		let dayCount = JSON.parse(localStorage.getItem('day-count'));
-		dayCount.nb = this.todayCount;
-		localStorage.setItem('day-count', JSON.stringify(dayCount));
+		this.cigarette.addACigarette();
 
-		if (localStorage.getItem('begin-date')) {
-			this.beginDate = localStorage.getItem('begin-date');
-		} else {
-			this.beginDate = moment();
-			localStorage.setItem('begin-date', this.beginDate);
-		}
 		
 		// Alerts
 		if (this.todayCount == (this.dayGoal - 2)) {
@@ -151,8 +136,8 @@ class App {
 	addAPack() {
 		this.nbPacks++;
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
-		
-		localStorage.setItem('nb-packs', this.nbPacks.toString());
+
+		this.cigarette.addAPack(this.nbPacks);
 	}
 
 	resetAll() {

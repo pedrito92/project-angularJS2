@@ -44,12 +44,12 @@ export class Cigarette{
 
     getCigarettePrice(){
         if (this.localstorage.get('price')) {
-            this.cigarettePrice = this.localstorage.get('price') / 20;
+            this.cigarettePrice = parseFloat(this.localstorage.get('price') / 20);
         } else {
             this.cigarettePrice = 0.35;
         }
 
-        return this.pricePack;
+        return this.cigarettePrice;
     }
 
     getPricePack(){
@@ -99,8 +99,8 @@ export class Cigarette{
         if (this.localstorage.get('day-count')) {
             let dayJsonReceived = JSON.parse(this.localstorage.get('day-count'));
 
-            if (dayJsonReceived.day != moment().format("MM/DD/YYYY")) {
-                dayJsonReceived.day = moment().format("MM/DD/YYYY");
+            if (dayJsonReceived.day != moment().format("DD/MM/YYYY")) {
+                dayJsonReceived.day = moment().format("DD/MM/YYYY");
                 dayJsonReceived.nb = 0;
 
                 this.localstorage.saveJson('day-count', JSON.stringify(dayJsonReceived));
@@ -110,7 +110,7 @@ export class Cigarette{
 
         } else {
             this.todayCount = 0;
-            let dayJsonSend = { 'day': moment().format("MM/DD/YYYY"), 'nb': this.todayCount };
+            let dayJsonSend = { 'day': moment().format("DD/MM/YYYY"), 'nb': this.todayCount };
 
             this.localstorage.saveJson('day-count', JSON.stringify(dayJsonSend));
         }
@@ -144,7 +144,7 @@ export class Cigarette{
     
     getBeginDate(){
         if (this.localstorage.get('begin-date')) {
-            this.beginDate = moment(this.localstorage.get('begin-date')).format('DD/MM/YYYY');
+            this.beginDate = this.localstorage.get('begin-date');
         }
 
         return this.beginDate;
@@ -174,15 +174,14 @@ export class Cigarette{
         FONCTIONS
      */
 
-    addACigarette(totalCigarettes:number, cigarettes:number, beginDate:Date = new Date()){
+    addACigarette(){
         this.totalCigarettes++;
         this.weekCount++;
         this.todayCount++;
         this.budgetCigarettes = parseFloat(Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100);
         this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
-        this.localstorage.saveNumber('total-cigarettes', totalCigarettes);
-        this.localstorage.saveNumber('cigarettes', cigarettes);
+        this.localstorage.saveNumber('total-cigarettes', this.totalCigarettes);
 
         let weekCount = JSON.parse( this.localstorage.get('week-count'));
         weekCount.nb = this.weekCount;
@@ -192,33 +191,14 @@ export class Cigarette{
         dayCount.nb = this.todayCount;
         this.localstorage.saveJson('day-count', JSON.stringify(dayCount));
 
-        if (localStorage.getItem('begin-date')) {
-            // Date format
-            let date = new Date(localStorage.getItem('begin-date'));
-            this.beginDate = moment(date).format('DD/MM/YYYY');
-        } else {
-            this.beginDate = new Date();
-            localStorage.setItem('begin-date', this.beginDate);
+        if (!this.beginDate) {
+            this.beginDate = moment().format('DD/MM/YYYY');
+            this.localstorage.saveDate('begin-date', this.beginDate);
         }
-
-        // Alerts
-        if (this.totalCigarettes == (this.dayGoal - 2)) {
-            alert("Objectif bientôt atteint.");
-        }
-        if((this.nbPacks * 20) - this.totalCigarettes == 5){
-            alert("Vous n'avez bientôt plus de cigarettes dans votre paquet. Il va falloir penser à en racheter.")
-        }
-
-
-        if (this.localstorage.get('begin-date')) {
-            beginDate = this.localstorage.get('begin-date');
-        } else {
-            this.localstorage.saveDate('begin-date', beginDate);
-        }
-
-        return beginDate;
     }
-    addAPack() {
+    addAPack(pack:Number) {
+        this.nbPacks = pack;
+        this.localstorage.saveNumber('nb-packs', pack);
 
     }
 }

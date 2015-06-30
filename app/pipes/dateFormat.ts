@@ -7,8 +7,7 @@ export class DateFormat extends Pipe {
 
   transform(value): string {
 
-    let date = new Date(value);
-    return moment(date).format('DD/MM/YYYY');
+    return value.toString();
 
   }
 
