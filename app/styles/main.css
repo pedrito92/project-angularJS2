@@ -1,9 +1,4 @@
 @import url(http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 
-.red {
-	color: #d9534f;
-}
-
-.orange {
-	color: #f0ad4e;
-}
+.red { color: #d9534f; }
+.orange { color: #f0ad4e; }

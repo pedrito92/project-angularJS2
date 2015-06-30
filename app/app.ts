@@ -68,7 +68,7 @@ class App {
 		        this.messageSuggestion = "Vous n'allez pas agrandir votre cave à vin de si tôt...";
 		        break;
 		    case (value >= 150 && value < 300):
-		        this.messageSuggestion = "Vous auriez pu compléter votre garde-robe..";
+		        this.messageSuggestion = "Vous auriez pu compléter votre garde-robe...";
 		        break;
 		    case (value >= 300):
 		        this.messageSuggestion = "Vous auriez pu vous faire un petit week-end en amoureux...";
