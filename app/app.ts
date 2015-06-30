@@ -105,7 +105,6 @@ class App {
 	}
 
 	addACigarette() {
-		console.log(this.todayCount);
 		this.totalCigarettes++;
 		this.weekCount++;
 		this.todayCount++;
