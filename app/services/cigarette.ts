@@ -194,6 +194,7 @@ export class Cigarette{
         if (!this.beginDate) {
             this.beginDate = moment().format('DD/MM/YYYY');
             this.localstorage.saveDate('begin-date', this.beginDate);
+            return this.beginDate;
         }
     }
     addAPack(pack:Number) {

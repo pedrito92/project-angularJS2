@@ -115,7 +115,8 @@ class App {
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
 
-		this.cigarette.addACigarette();
+		let date = this.cigarette.addACigarette();
+		if(date) this.beginDate = date;
 
 		
 		// Alerts
