@@ -3,6 +3,7 @@ import {Component, View, bootstrap, NgFor, NgIf, defaultPipes, PipeRegistry, bin
 import {Cigarette} from 'services/cigarette'
 import {DateFormat} from 'pipes/dateFormat';
 
+
 @Component({
   	selector: 'app'
 })
@@ -16,105 +17,38 @@ class App {
 	cigarette: Cigarette;
 
 	messageSuggestion: String;
-	weekGoal: Number;
-	dayGoal: Number;
-	totalCigarettes: Number;
-	budgetCigarettes: Number;
-	nbPacks: Number;
-	pricePack: Number;
-	cigarettesLeft: Number;
-	cigarettePrice: Number;
+	weekGoal: Number = 0;
+	dayGoal: Number = 0;
+	totalCigarettes: Number = 0;
+	budgetCigarettes: Number = 0;
+	nbPacks: Number = 0;
+	pricePack: Number = 0;
+	cigarettesLeft: Number = 0;
+	cigarettePrice: Number = 0;
 	beginDate: Date;
-	todayCount: Number;
-	weekCount: Number;
+	todayCount: Number = 0;
+	weekCount: Number = 0;
 
 	constructor() {
 		this.cigarette = new Cigarette();
 
-		if (localStorage.getItem('week-goal')) {
-			this.weekGoal = parseInt(localStorage.getItem('week-goal'));
-		} else {
-			this.weekGoal = 0;
+		this.weekGoal = this.cigarette.getWeekGoal();
+		this.dayGoal = this.cigarette.getDayGoal();
+		this.pricePack = this.cigarette.getPricePack();
+		this.nbPacks = this.cigarette.getNbPack();
+		this.beginDate = this.cigarette.getBeginDate();
+		this.cigarettePrice = this.cigarette.getCigarettePrice();
+		this.weekCount = this.cigarette.getWeekCount();
+		this.todayCount = this.cigarette.getDayCount();
+
+		let cigarettes = this.cigarette.getTotalCigarette();
+		if(typeof cigarettes == undefined){
+			this.totalCigarettes = cigarettes.total;
+			this.budgetCigarettes = cigarettes.budget;
+			this.cigarettesLeft = cigarettes.left;
 		}
 
-		if (localStorage.getItem('day-goal')) {
-			this.dayGoal = parseInt(localStorage.getItem('day-goal'));
-		} else {
-			this.dayGoal = 0;
-		}
-
-		if (localStorage.getItem('price')) {
-			this.pricePack = localStorage.getItem('price');
-		} else {
-			this.pricePack = 0;
-		}
-
-		if (localStorage.getItem('nb-packs')) {
-			this.nbPacks = parseInt(localStorage.getItem('nb-packs'));
-		} else {
-			this.nbPacks = 0;
-		}
-
-		if (localStorage.getItem('begin-date')) {
-			// Date format
-			this.beginDate = localStorage.getItem('begin-date');
-		}
-
-		if (localStorage.getItem('week-count')) {
-			let weekJsonReceived = JSON.parse(localStorage.getItem('week-count'));
-			
-			if (weekJsonReceived.week != moment().week()) {
-				weekJsonReceived.week = moment().week();
-				weekJsonReceived.nb = 0;
-
-				localStorage.setItem('week-count', JSON.stringify(weekJsonReceived));
-			}
-
-			this.weekCount = weekJsonReceived.nb;
-
-		} else {
-			this.weekCount = 0;
-			let weekJsonSend = { 'week': moment().week(), 'nb': this.weekCount };
-
-			localStorage.setItem('week-count', JSON.stringify(weekJsonSend));
-		}
-
-
-		if (localStorage.getItem('day-count')) {
-			let dayJsonReceived = JSON.parse(localStorage.getItem('day-count'));
-	
-			if (dayJsonReceived.day != moment().format("MM/DD/YYYY")) {
-				dayJsonReceived.day = moment().format("MM/DD/YYYY");
-				dayJsonReceived.nb = 0;
-				
-				localStorage.setItem('day-count', JSON.stringify(dayJsonReceived));
-			}
-			
-			this.todayCount = dayJsonReceived.nb;
-
-		} else {
-			this.todayCount = 0;
-			let dayJsonSend = { 'day': moment().format("MM/DD/YYYY"), 'nb': this.todayCount };
-			
-			localStorage.setItem('day-count', JSON.stringify(dayJsonSend));
-		}
-
-		if (localStorage.getItem('price')) {
-			this.cigarettePrice = parseInt(localStorage.getItem('price')) / 20;
-			
-		} else {
-			this.cigarettePrice = 0.35;
-		}
-
-		if (localStorage.getItem('total-cigarettes')) {
-			this.totalCigarettes = localStorage.getItem('total-cigarettes');
-			this.budgetCigarettes = Math.round((this.cigarettePrice * this.totalCigarettes)*100)/100;
-			this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
-		} else {
-			this.totalCigarettes = 0;
-			this.budgetCigarettes = 0;
-		}
-
+		console.log(this.todayCount);
 		this.addASuggestion(this.budgetCigarettes);
 
 	}
@@ -148,13 +82,12 @@ class App {
 	  
 	updateWeekGoal($event) {
 		this.weekGoal = $event.target.value;
-		localStorage.setItem('week-goal', this.weekGoal.toString());
-		//this.cigarette.setWeekGoal($event.target.value);
+		this.cigarette.setWeekGoal($event.target.value);
 	}
 
 	updateDayGoal($event) {
 		this.dayGoal = $event.target.value;
-		localStorage.setItem('day-goal', this.dayGoal.toString());
+		this.cigarette.setDayGoal($event.target.value);
 	}
 
 	updatePricePack($event) {
@@ -162,17 +95,18 @@ class App {
 		this.cigarettePrice = this.pricePack / 20;
 		this.budgetCigarettes = Math.round(this.cigarettePrice * this.totalCigarettes);
 
-		localStorage.setItem('price', this.pricePack.toString());
+		this.cigarette.setPricePack($event.target.value);
 	}
 
 	updateNbPacks($event) {
 		this.nbPacks = this.nbPacks + parseFloat($event.target.value);
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
 
-		localStorage.setItem('nb-packs', this.nbPacks.toString());
+		this.cigarette.setNbPacks($event.target.value);
 	}
 
 	addACigarette() {
+		console.log(this.todayCount);
 		this.totalCigarettes++;
 		this.weekCount++;
 		this.todayCount++;
@@ -194,22 +128,26 @@ class App {
 		localStorage.setItem('day-count', JSON.stringify(dayCount));
 
 		if (localStorage.getItem('begin-date')) {
-			// Date format
 			this.beginDate = localStorage.getItem('begin-date');
 		} else {
-			this.beginDate = new Date();
+			this.beginDate = moment();
 			localStorage.setItem('begin-date', this.beginDate);
 		}
 		
 		// Alerts
-		if (this.totalCigarettes == (this.dayGoal - 2)) {
-			alert("Objectif bientôt atteint.");
+		if (this.todayCount == (this.dayGoal - 2)) {
+			alert("Objectif quotidien bientôt atteint.");
 		}
-		if((this.nbPacks * 20) - this.totalCigarettes == 5){
+
+		if (this.weekCount == (this.weekGoal - 2)) {
+			alert("Objectif de la semaine bientôt atteint.");
+		} 
+
+		if ((this.nbPacks * 20) - this.totalCigarettes == 5){
 			alert("Vous n'avez bientôt plus de cigarettes dans votre paquet. Il va falloir penser à en racheter.")
 		}
 	}
-
+	
 	addAPack() {
 		this.nbPacks++;
 		this.cigarettesLeft = (this.nbPacks * 20) - this.totalCigarettes;
@@ -234,6 +172,18 @@ class App {
 		this.weekCount = undefined;
 
 		location.reload();
+	}
+
+	getTodayClass() {
+		if (this.dayGoal && this.todayCount >= this.dayGoal) {
+			return true;
+		} 
+	}
+	
+	getWeekClass() {
+		if (this.weekGoal && this.weekCount >= this.weekGoal) {
+			return true;
+		} 
 	}
 }
 
