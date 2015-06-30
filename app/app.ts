@@ -1,6 +1,7 @@
 /// <reference path='../typings/tsd.d.ts' />
-import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, NgIf, defaultPipes, PipeRegistry, bind} from 'angular2/angular2';
 import {Cigarette} from 'services/cigarette'
+import {DateFormat} from 'pipes/dateFormat';
 
 @Component({
   	selector: 'app'
@@ -56,8 +57,7 @@ class App {
 
 		if (localStorage.getItem('begin-date')) {
 			// Date format
-			let date = new Date(localStorage.getItem('begin-date'));
-			this.beginDate = moment(date).format('DD/MM/YYYY');
+			this.beginDate = localStorage.getItem('begin-date');
 		}
 
 		if (localStorage.getItem('week-count')) {
@@ -195,8 +195,7 @@ class App {
 
 		if (localStorage.getItem('begin-date')) {
 			// Date format
-			let date = new Date(localStorage.getItem('begin-date'));
-			this.beginDate = moment(date).format('DD/MM/YYYY');
+			this.beginDate = localStorage.getItem('begin-date');
 		} else {
 			this.beginDate = new Date();
 			localStorage.setItem('begin-date', this.beginDate);
@@ -238,4 +237,10 @@ class App {
 	}
 }
 
-bootstrap(App);
+export var pipes = Object.assign({}, defaultPipes, {
+	format: [
+		new DateFormat()
+	]
+});
+
+bootstrap(App, bind(PipeRegistry).toValue(new PipeRegistry(pipes)));

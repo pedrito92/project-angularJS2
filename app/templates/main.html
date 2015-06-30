@@ -4,13 +4,13 @@
 			<h1>Calculez votre consommation de cigarettes</h1>
 		</div>
 
-		<p *ng-if="totalCigarettes && beginDate">Vous avez consommé {{ totalCigarettes }} cigarettes depuis le {{beginDate}}, {{dayCount}} cigarettes aujourd'hui et {{weekCount}} cigarettes depuis le début de la semaine.</p>
-		<p *ng-if="budgetCigarettes">Cela vous a coûté {{ budgetCigarettes }}€</p>
+		<p *ng-if="totalCigarettes && beginDate">Vous avez consommé {{ totalCigarettes }} cigarettes depuis le {{beginDate | format}}, {{dayCount}} cigarettes aujourd'hui et {{weekCount}} cigarettes depuis le début de la semaine.</p>
+		<p *ng-if="budgetCigarettes">Cela vous a coûté {{ budgetCigarettesd }}€</p>
 		<p *ng-if="messageSuggestion" style="color: red;">{{messageSuggestion}}</p>
 
 		<p *ng-if="cigarettesLeft > 0">Il vous reste {{ cigarettesLeft }} cigarettes.</p>
 		<p *ng-if="cigarettesLeft && cigarettesLeft <= 0">Il ne vous reste plus aucune cigarette.</p>
-
+		
 		<button (click)="addACigarette()" class="btn btn-primary btn-lg">Ajouter une cigarette consommée</button>
 		<button (click)="addAPack()" class="btn btn-info btn-lg">Ajouter un paquet acheté</button>
 
