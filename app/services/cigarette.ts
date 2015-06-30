@@ -13,6 +13,7 @@ export class Cigarette{
     private todayCount: Number;
     private weekCount: Number;
     private beginDate: Date;
+    private messageSuggestion: String;
 
     constructor(){
         this.localstorage = new LocalStorage();
@@ -201,5 +202,33 @@ export class Cigarette{
         this.nbPacks = pack;
         this.localstorage.saveNumber('nb-packs', pack);
 
+    }
+
+    addASuggestion(value){
+        switch (true) {
+            case (value >= 10 && value < 20):
+                this.messageSuggestion = "Vous avez manqué l'occasion d'aller au cinéma...";
+                break;
+            case (value >= 20 && value < 30):
+                this.messageSuggestion = "Dommage ! Vous auriez pu inviter votre copine au MacDo.";
+                break;
+            case (value >= 30 && value < 70):
+                this.messageSuggestion = "Vous auriez pu aller au restaurant...";
+                break;
+            case (value >= 70 && value < 150):
+                this.messageSuggestion = "Vous n'allez pas agrandir votre cave à vin de si tôt...";
+                break;
+            case (value >= 150 && value < 300):
+                this.messageSuggestion = "Vous auriez pu compléter votre garde-robe...";
+                break;
+            case (value >= 300):
+                this.messageSuggestion = "Vous auriez pu vous faire un petit week-end en amoureux...";
+                break;
+
+        }
+
+        this.localstorage.saveString('message-suggestion', this.messageSuggestion);
+
+        return this.messageSuggestion;
     }
 }
